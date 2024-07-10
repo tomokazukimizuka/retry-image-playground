@@ -1,6 +1,6 @@
 <template>
   <div class="retry-image-showcase">
-    <button @click="retryMissingPath">リトライ開始-失敗(存在しないパスに変更して戻す)</button>
+    <button @click="retryMissingPath">リトライ開始-成功(存在しないパスに変更して戻す)</button>
     <button @click="retryRename">(prod向け)リトライ開始(サーバーの画像名を変更して更新)</button>
     <button @click="restoreRename">(prod向け)リトライ成功(変更した画像名を戻す)</button>
     <div class="status">
