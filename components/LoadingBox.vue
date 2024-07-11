@@ -1,7 +1,7 @@
 <template>
-  <div class="loadingBox">
+  <div class="loading-box">
     <div
-      class="loadingIconx"
+      class="Icon-wrapper"
       v-if="isLoading"
     >
       <LoadingIcon
@@ -27,23 +27,25 @@ const props = withDefaults(
   {
     color: '#006eff',
     isLoading: false,
-    width: '20px',
-    height: '20px'
+    width: '100%',
+    height: '100%'
   }
 );
 const { color, isLoading, width, height } = toRefs(props);
 </script>
 
 <style lang="scss" scoped>
-.loadingBox {
+.loading-box {
   position: relative;
-  width:v-bind(width);
-  height:v-bind(height);
-  .loadingIconx {
+  width: v-bind(width);
+  height: v-bind(height);
+  .Icon-wrapper {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
   }
 }
 </style>
