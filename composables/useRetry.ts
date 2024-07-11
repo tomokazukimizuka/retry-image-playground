@@ -3,7 +3,7 @@ export const useRetry = (image: string) => {
   const currentSrc: Ref<string> = ref('');
 
   const hash: ComputedRef<string> = computed(() => {
-    //publicはhashなし
+    // publicはhashなし
     if (!dirPath.includes('assets')) return '';
     const pathArray: string[] = currentSrc.value.split('/');
     const fullFileName: string = pathArray.pop() || '';
@@ -20,7 +20,7 @@ export const useRetry = (image: string) => {
   };
   const { dirPath, fileName, extension, fullFileName } = separatePath(image);
 
-  //存在しないパスを指定してリトライを発生させて5秒間後に元々のパスに戻す
+  // 存在しないパスを指定してリトライを発生させて5秒間後に元々のパスに戻す
   const retryMissingPath = () => {
     srcImage.value = _missingPath;
     setTimeout(() => {

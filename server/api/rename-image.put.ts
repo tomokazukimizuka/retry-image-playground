@@ -9,7 +9,7 @@ export default defineEventHandler(async (event) => {
   const imageDirPath: string = (() => {
     switch (true) {
       case config.app.env === 'development' && dirPath.includes('assets'):
-        //dev assets
+        // dev assets
         return path.resolve(process.cwd(), 'assets', 'images');
       case config.app.env !== 'development' && dirPath.includes('assets'):
         // prod assets
